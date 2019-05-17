@@ -26,47 +26,47 @@ public class MemcacheApplicationTests {
     private ObjectMapper objectMapper;
     private MemCachedClient memcachedClient;
 
-    @Before
-    public void init(){
-        memcachedClient = memcacheRunner.getClient();
-    }
+//    @Before
+//    public void init(){
+//        memcachedClient = memcacheRunner.getClient();
+//    }
 
 
-    @Test
-    public void contextLoads() {
-    }
-
-
-    @Test
-    public void setMsg() throws JsonProcessingException {
-        List<Person> personList = personService.selectByExample(new PersonExample());
-        boolean result = memcachedClient.set("personList", objectMapper.writeValueAsString(personList));
-        System.out.println("set结果" + result);
-    }
-
-
-    @Test
-    public void get() {
-        List<Person> personList = (List<Person>) memcachedClient.get("personList");
-        System.out.println(personList);
-    }
-
-
-    
-    @Test
-    public void remove() {
-        boolean result = memcachedClient.delete("personList");
-        System.out.println("remove结果" + result);
-    }
-
-    @Test
-    public void replace() {
-        memcachedClient.replace("personList", "666");
-        System.out.println(memcachedClient.get("personList"));
-    }
-
-    @Test
-    public void add() {
-
-    }
+//    @Test
+//    public void contextLoads() {
+//    }
+//
+//
+//    @Test
+//    public void setMsg() throws JsonProcessingException {
+//        List<Person> personList = personService.selectByExample(new PersonExample());
+//        boolean result = memcachedClient.set("personList", objectMapper.writeValueAsString(personList));
+//        System.out.println("set结果" + result);
+//    }
+//
+//
+//    @Test
+//    public void get() {
+//        List<Person> personList = (List<Person>) memcachedClient.get("personList");
+//        System.out.println(personList);
+//    }
+//
+//
+//
+//    @Test
+//    public void remove() {
+//        boolean result = memcachedClient.delete("personList");
+//        System.out.println("remove结果" + result);
+//    }
+//
+//    @Test
+//    public void replace() {
+//        memcachedClient.replace("personList", "666");
+//        System.out.println(memcachedClient.get("personList"));
+//    }
+//
+//    @Test
+//    public void add() {
+//
+//    }
 }
