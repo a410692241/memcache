@@ -1,0 +1,14 @@
+memcache:
+  ip: 192.168.0.121
+  port: 11211
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:com/wei/mapper/*.xml
+  type-aliases-package: classpath:com.wei.bo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
